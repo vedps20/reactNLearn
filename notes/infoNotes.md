@@ -49,3 +49,37 @@ const HeadingComponent = () =>{
         <h1 className = "heading">React Component</h1>
     </div>
 };
+
+The dot notation (.) is used to select elements by class in CSS. (.className)
+The hash/pound sign (#) is used to select elements by ID in CSS. (.idName)
+
+
+To print a js object in jsx we need to put the object inside {}.
+So whenever we do inline css in jsx the syntax becomes style = {{backgroundColor: "#f0f0f0"}}
+// one brace is for the jsx one is of the jsobject
+
+
+const RestaurantCard = (props) => {
+  return ();
+}; // and then use the props as props.attribute
+
+                    OR
+
+const RestaurantCard = ({attribure1, attribute2, ..., attributeN}) => {
+  return ();
+}; // and then use the props directly
+//this destructuring is js not react
+
+                   OR
+
+const RestaurantCard = (props) => {
+  const {attribure1, attribute2, ..., attributeN} = props;
+  return ();
+}; // and then use the props directly
+
+
+
+donot use map indexes for keys as its not recommended by react itself
+resList.map((restaurant, index) => (
+  <RestaurantCard key={index} resData={restaurant} />
+  ))
