@@ -83,3 +83,19 @@ donot use map indexes for keys as its not recommended by react itself
 resList.map((restaurant, index) => (
   <RestaurantCard key={index} resData={restaurant} />
   ))
+
+
+
+
+{} around import means that it is a named export.
+
+
+Types of export/import
+ - Default export/import
+   - export default <name_of_variable/component/element>
+   import name_of_variable/component/element from "...";
+
+ - Named export/import
+   -export const componenet;
+   import {componenet} from "...";// curled braces
+
