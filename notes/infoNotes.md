@@ -1,5 +1,8 @@
 # infoNotes
 
+why react is fast?
+because it is fast in DOM manipulation, because it uses virtual DOM, applying diff algorithm which is very fast and reconsilation
+
 Q.) why 2 React scripts?
 A.) first link is the core React library second link is the react library for DOM manipulation.
 React element is nothing but a javascript object with attributes and childrents ( i.e, props ).
@@ -99,3 +102,23 @@ Types of export/import
    -export const componenet;
    import {componenet} from "...";// curled braces
 
+
+React Hooks
+-useState()
+-useEffect()
+
+
+Below is how we define state variable.// useState returns an array and what we assign here is array destructuring, just like object destructuring for js objects
+const [variableName, setVariableName] = useState()// [first is the variable, second is the setter for it(it can have any name)]
+
+            OR
+const arr = useState();
+const [variableName, setVariableName] =  arr;// but this is not suggested to use
+
+            OR
+const arr = useState();
+const variableName = arr[0];
+const setVariableName = arr[1];
+             
+
+whenever a state variable updates, react will re-render the entire componenet

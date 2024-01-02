@@ -31,8 +31,8 @@
     margin-right: 8%;
 }
 
-.search{
-    padding: 10px;
+.filter-btn{
+    cursor: pointer;
 }
 
 .res-container{

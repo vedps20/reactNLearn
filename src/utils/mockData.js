@@ -13,7 +13,7 @@ const resList = [
           "South Indian",
           "North Indian"
         ],
-        "avgRating": 4.2,
+        "avgRating": 3.2,
         "parentId": "2120",
         "avgRatingString": "4.2",
         "totalRatingsString": "10K+",
@@ -110,7 +110,7 @@ const resList = [
           "Beverages",
           "Snacks"
         ],
-        "avgRating": 4.4,
+        "avgRating": 3.4,
         "parentId": "3818",
         "avgRatingString": "4.4",
         "totalRatingsString": "1K+",
@@ -204,7 +204,7 @@ const resList = [
         "cuisines": [
           "Pizzas"
         ],
-        "avgRating": 4,
+        "avgRating": 4.1,
         "parentId": "721",
         "avgRatingString": "4.0",
         "totalRatingsString": "100+",
