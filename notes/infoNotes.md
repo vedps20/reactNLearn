@@ -1,5 +1,7 @@
 # infoNotes
 
+React applications are generally called single page application.
+
 why react is fast?
 because it is fast in DOM manipulation, because it uses virtual DOM, applying diff algorithm which is very fast and reconsilation
 
@@ -120,5 +122,35 @@ const arr = useState();
 const variableName = arr[0];
 const setVariableName = arr[1];
              
+whenever a state variable updates ( whenever setVariableName() is called), react will re-render the entire componenet
 
-whenever a state variable updates, react will re-render the entire componenet
+React works fast with immutable items.
+
+React fiber implements reconciler and, react-core implements renderer.
+
+useEffect() is used when something is to be rendered after the components loads
+useEffect() renders everytime its componenet renders
+
+if no dependency array is present, it is called on every render
+if dependency array is empty = [] , it is called only on initial render ( only once) .
+if dependency is on a state variable, it will be called on its render
+
+useEffect(()=>{
+    fetchData();
+}); // will render after each componenet render
+
+
+useEffect(()=>{
+    fetchData();
+}, []); // will render only on initial render
+
+Types of routing: 
+Client side routing : we do not make any network call, we just render the details with what we have, like this app we build. ex: example/about .
+Server Side routing : if we make network call for ex: example/component to our server then we get the details like html, css, js etc. and then render it, this is called SS routing.
+
+
+useParams() gets the parameters from the URL
+
+use <link> instead for <a> for hyperlinks, <link> does not renders the entire page unlike <a>. <link> is present in "react-router-dom"
+
+useRouteError() gives error which we get
