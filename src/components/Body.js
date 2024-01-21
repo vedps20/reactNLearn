@@ -13,20 +13,22 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
 
     useEffect(()=>{
-        fetchData();
+        const somedata = fetchData();
     }, []);
 
     const fetchData = async () =>{
         const resListData = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9394137&lng=77.6952031&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9394137&lng=77.6952031"
         );
 
         const jsonNewResList = await resListData.json();
-        setlistOfRestaurants(jsonNewResList?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurant(jsonNewResList?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(jsonNewResList?.data?.cards)
+        setlistOfRestaurants(jsonNewResList?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(jsonNewResList?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
 
+    console.log(listOfRestaurants);
     if(listOfRestaurants===undefined || listOfRestaurants===null || listOfRestaurants.length===0){
        return <Shimmer/>;
     }

@@ -154,3 +154,7 @@ useParams() gets the parameters from the URL
 use <link> instead for <a> for hyperlinks, <link> does not renders the entire page unlike <a>. <link> is present in "react-router-dom"
 
 useRouteError() gives error which we get
+
+we declare an object state in class based components to create state variables and all variables are present inside it, not individually unlike in function based component
+
+during ClassComponent lifecycle, first construtor is called, then render and then mounting happens. i.e, componentDidMount.
