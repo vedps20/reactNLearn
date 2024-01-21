@@ -7,6 +7,7 @@ const About = () => {
             <h1>ABOUT this is something different</h1>
             <h2>This is ABOUT PAGE for being amazing</h2>
             <UserCC name = { "Ved Pratap Singh" } location = {"India"}> </UserCC>
+            <User></User>
         </div>)
 };
 

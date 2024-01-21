@@ -130,6 +130,18 @@ React fiber implements reconciler and, react-core implements renderer.
 
 useEffect() is used when something is to be rendered after the components loads
 useEffect() renders everytime its componenet renders
+useEffect uses return as its cleanup method so, if there is an interval defined somewhere in code and we switch to another component without cleaning it up, it will rrn behind the scene causing performance issue. 
+
+
+useEffect(()=>{
+    fetchData();
+
+
+    return () => {
+
+    }
+}, []);
+
 
 if no dependency array is present, it is called on every render
 if dependency array is empty = [] , it is called only on initial render ( only once) .
@@ -158,3 +170,4 @@ useRouteError() gives error which we get
 we declare an object state in class based components to create state variables and all variables are present inside it, not individually unlike in function based component
 
 during ClassComponent lifecycle, first construtor is called, then render and then mounting happens. i.e, componentDidMount.
+
