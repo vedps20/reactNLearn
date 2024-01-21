@@ -145,7 +145,7 @@ useEffect(()=>{
 
 if no dependency array is present, it is called on every render
 if dependency array is empty = [] , it is called only on initial render ( only once) .
-if dependency is on a state variable, it will be called on its render
+if dependency is on a state variable, it will be called on that state component render
 
 useEffect(()=>{
     fetchData();
@@ -171,3 +171,10 @@ we declare an object state in class based components to create state variables a
 
 during ClassComponent lifecycle, first construtor is called, then render and then mounting happens. i.e, componentDidMount.
 
+Following is the order of lifecycle methods calls in Class Based Components:
+
+constructor()
+render ()
+componentDidMount()
+componentDidUpdate()
+componentWillUnmount()
