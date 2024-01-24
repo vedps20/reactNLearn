@@ -20,8 +20,7 @@ class UserCC extends React.Component{
         this.setState({
             userInfo : json,
         });
-
-        console.log(json);
+        
     }
 
     render(){
