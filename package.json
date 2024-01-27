@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/vedps20/reactNLearn#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.17",
     "parcel": "^2.10.3",
-    "process": "^0.11.10"
+    "postcss": "^8.4.33",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
     "cowsay": "^1.5.0",
