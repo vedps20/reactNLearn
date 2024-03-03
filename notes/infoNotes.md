@@ -178,3 +178,6 @@ render ()
 componentDidMount()
 componentDidUpdate()
 componentWillUnmount()
+
+
+higher order componenets are function which take input as a componenet and return a componenet.

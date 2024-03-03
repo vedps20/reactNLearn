@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import resList from "../utils/mockData" 
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
@@ -13,19 +13,22 @@ const Body = () => {
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [searchText, setSearchText] = useState("");
 
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard)
+
     useEffect(()=>{
         const somedata = fetchData();
     }, []);
 
     const fetchData = async () =>{
         const resListData = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9394137&lng=77.6952031"
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9394137&lng=77.6952031&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         );
 
         const jsonNewResList = await resListData.json();
-        setlistOfRestaurants(jsonNewResList?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurant(jsonNewResList?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setlistOfRestaurants(jsonNewResList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(jsonNewResList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
+        console.log(jsonNewResList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle)
     }
 
     const onlineStatus = useOnlineStatus();
@@ -79,7 +82,12 @@ const Body = () => {
                     <Link
                         key={restaurant.info.id}
                         to={"/restaurants/" + restaurant.info.id}>
-                            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+                            {
+                                //THIS DOES NOT WORK AS THERE IS NO PROMOTED RESTAURANTS ANYMORE IN SWIGGY.
+                            // restaurant.data.promoted ?
+                             <RestaurantCardPromoted key={restaurant.info.id} resData={restaurant} /> 
+                            // :  <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+                            }
                     </Link> 
                     ))
                 }

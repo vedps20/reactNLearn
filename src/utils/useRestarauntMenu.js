@@ -16,6 +16,8 @@ export const useRestarauntMenu = (resId) =>{
         setResInfo(json.data);
     };
 
+    console.log(resInfo)
+
     return resInfo;
 
 }
