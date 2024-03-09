@@ -15,3 +15,7 @@ what exactly does parcel do?
 HMR (Hot Module Replacement) !
 File Watching Algorithm - written in c++
 consistent hashing
+
+onClick={handleAddItem}
+onClick={()=>handleAddItem(item)}
+onClick={handleAddItem(item)}

@@ -181,3 +181,6 @@ componentWillUnmount()
 
 
 higher order componenets are function which take input as a componenet and return a componenet.
+
+
+Reduxt Toolkit uses immer behind the scene, its a small library to distinguish state changes.
